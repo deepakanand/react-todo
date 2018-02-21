@@ -25,12 +25,4 @@ Bundle the assets for production.
 npm run build
 ```
 
-#### Docker
-
-Create and run the docker-compose environment
-
-```
-docker build -t todo .
-docker-compose up
-```
 
