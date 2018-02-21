@@ -1,5 +1,9 @@
 # react-todo
-Another basic todo app in React and Flux
+Learning React: basic todo app in React and Flux
+
+#### Demo page
+https://rawgit.com/deepakanand/react-todo/master/public/index.html
+
 
 #### Run
 
