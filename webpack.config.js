@@ -1,21 +1,23 @@
 // Webpack config file
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var webpack = require('webpack'),
+    path = require('path')
+
+var BUILD_DIR = path.resolve(__dirname + '/public/')
+var APP_DIR = path.resolve(__dirname + '/private/')
 
 module.exports = {
-  entry: './assets/js/components/Index.jsx',
+  entry: APP_DIR + '/Index.jsx',
   output: {
-    path: __dirname + '/assets/js',
+    path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  devtool: 'source-map',
+  devServer: {
+      inline: true,
+      contentBase: BUILD_DIR,
+      port: 3333
+  },
   module: {
-    preLoaders: [
-      {
-        test: /\.jsx$|\.js$/,
-        loader: 'eslint-loader',
-        include: __dirname + '/assets',
-        exclude: /bundle\.js$/
-      }
-    ],
     loaders: [
       {
         test: /\.jsx$|\.js$/,
@@ -23,11 +25,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  },
-  plugins: [
-    new BrowserSyncPlugin({
-      proxy: 'localhost:8000'
-    })
-  ]
+  }
 };
 
