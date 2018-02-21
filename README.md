@@ -11,7 +11,6 @@ npm start
 #### Develop
 
 Webpack auto-watches client assets.
-Nodemon auto-watches server assets.
 
 ```
 npm install
